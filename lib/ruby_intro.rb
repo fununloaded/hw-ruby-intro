@@ -3,15 +3,23 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
-end
+  arr.inject(0) {|result, element| result + element}
+end  
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  if arr.empty?
+    return 0
+  end
+  if arr.size == 1
+    return arr[0]
+  end
+  x = arr.sort{|a,b| b <=> a}[0]
+  y = arr.sort{|a,b| b <=> a}[1]
+  return x+y
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  arr.combination(2).any? {|a, b| a + b == n}
 end
 
 # Part 2
